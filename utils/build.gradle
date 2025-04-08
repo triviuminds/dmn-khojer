@@ -1,0 +1,14 @@
+dependencies {
+    implementation utils.lombok
+    annotationProcessor utils.lombok
+    implementation kie.dmn_validation
+    implementation utils.underscore
+
+    testImplementation commons.io
+    testImplementation utils.json_path_assert
+
+    testImplementation junit.jupiter
+    testImplementation junit.hamcrest_core
+    testRuntimeOnly junit.platform_suite
+
+}

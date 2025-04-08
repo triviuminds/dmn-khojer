@@ -38,3 +38,10 @@ replay_pid*
 .vscode/
 .history/
 
+#gradle
+.gradle/
+build/
+
+# maven
+target/
+

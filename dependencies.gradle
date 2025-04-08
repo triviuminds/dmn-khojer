@@ -1,0 +1,23 @@
+ext {
+    KogitoBOM = '10.0.0'
+}
+
+ext.utils = [
+    lombok: 'org.projectlombok:lombok:1.18.38',
+    json_path_assert: 'com.jayway.jsonpath:json-path-assert:2.9.0',
+    underscore: 'com.github.javadev:underscore17:1.68'
+]
+
+ext.kie = [
+    dmn_validation: "org.kie:kie-dmn-validation:${KogitoBOM}"
+]
+
+ext.commons = [
+    io: 'commons-io:commons-io:2.18.0'
+]
+
+ext.junit = [
+    jupiter: 'org.junit.jupiter:junit-jupiter:5.12.1',
+    platform_suite: 'org.junit.platform:junit-platform-suite:1.12.1',
+    hamcrest_core: 'org.hamcrest:hamcrest-core:3.0'
+]

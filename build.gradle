@@ -29,18 +29,26 @@ subprojects {
     apply plugin: 'jacoco'
     apply plugin: 'maven-publish'
     apply plugin: 'org.sonarqube'
+    apply plugin: 'io.freefair.lombok'
 
     jar {
+        manifest {
+            attributes(
+                'Implementation-Title': rootProject.name-project.name,
+                'Implementation-Version': version,
+                'Organization': 'organization',
+            )
+        }
         archiveBaseName.set("${rootProject.name}-${project.name}")
+        archiveVersion.set(version)
     }
 
     publishing {
         publications {
             mavenJava(MavenPublication) {
-                //from components.java //to include all Java sources
                 groupId = 'com.triviuminds.dmn'
+                artifactId = "${rootProject.name}-${project.name}"
                 artifact jar
-                version = '1.0.0-SNAPSHOT'
             }
         }
     }

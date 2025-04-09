@@ -10,5 +10,4 @@ dependencies {
     testImplementation junit.jupiter
     testImplementation junit.hamcrest_core
     testRuntimeOnly junit.platform_suite
-
 }

@@ -30,6 +30,10 @@ subprojects {
     apply plugin: 'maven-publish'
     apply plugin: 'org.sonarqube'
 
+    jar {
+        archiveBaseName.set("${rootProject.name}-${project.name}")
+    }
+
     publishing {
         publications {
             mavenJava(MavenPublication) {
@@ -107,5 +111,13 @@ tasks.register("codeCoverageReport", JacocoReport) {
 
 build {
     dependsOn codeCoverageReport
+    doLast {
+        println("move all the module jars to the top folder")
+        delete("$rootDir/build/libs/${project.name}-${version}.jar")
+        copy {
+            from subprojects.collect { it.tasks.jar.archiveFile }
+            into "$rootDir/build/libs"
+        }
+    }
 }
 

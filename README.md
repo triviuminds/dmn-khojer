@@ -16,7 +16,7 @@ It also includes
 
 ## Requirements
 - **Java**: 17 or higher
-- **Gradle**: 7.0 or higher
+- **Gradle**: 8.0 or higher
 - **Sonar**: Optional, for code quality analysis
 
 

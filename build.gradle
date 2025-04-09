@@ -51,6 +51,16 @@ subprojects {
                 artifact jar
             }
         }
+
+        repositories {
+            maven {
+                url = version.endsWith('SNAPSHOT') ?  findProperty('nexusUrl') + "/repositories/snapshots/" : findProperty('nexusUrl') + "/repositories/releases/"
+                credentials {
+                    username findProperty('nexusUser')
+                    password findProperty('nexusPassword')
+                }
+            }
+        }
     }
 
     test {
